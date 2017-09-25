@@ -52,8 +52,8 @@ function main()
     d = DerivedMain:new()
     e = SingletonMain:getSingleton()
 
-    print("#Main.instances after create                         :", #Main.instances)
-    print("#DerivedMain.instances after create                  :", #DerivedMain.instances)
+    print("#Main._instances after create                         :", #Main._instances)
+    print("#DerivedMain._instances after create                  :", #DerivedMain._instances)
 
     print("a == b", a == b)
     print("a == c", a == c)
@@ -64,15 +64,15 @@ function main()
 
     if true then
         delete(b)
-        print("#Main.instances after delete(b)                      :", #Main.instances)
-        print("#DerivedMain.instances after delete(b)               :", #DerivedMain.instances)
+        print("#Main._instances after delete(b)                      :", #Main._instances)
+        print("#DerivedMain._instances after delete(b)               :", #DerivedMain._instances)
         print("b.m_Deleted", b.m_Deleted)
     end
 
     if true then
         Main:deleteAll()
-        print("#Main.instances after Main:deleteAll()               :", #Main.instances)
-        print("#DerivedMain.instances after Main:deleteAll()        :", #DerivedMain.instances)
+        print("#Main._instances after Main:deleteAll()               :", #Main._instances)
+        print("#DerivedMain._instances after Main:deleteAll()        :", #DerivedMain._instances)
         print("a.m_Deleted", a.m_Deleted)
         print("b.m_Deleted", b.m_Deleted)
         print("c.m_Deleted", c.m_Deleted)
@@ -81,7 +81,7 @@ function main()
 
     if true then
         DerivedMain:deleteAll()
-        print("#DerivedMain.instances after DerivedMain:deleteAll() :", #DerivedMain.instances)
+        print("#DerivedMain._instances after DerivedMain:deleteAll() :", #DerivedMain._instances)
         print("d.m_Deleted", d.m_Deleted)
     end
 end

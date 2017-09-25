@@ -1,5 +1,5 @@
 ManagedSingleton = inherit(ManagedClass)
-ManagedSingleton._getSingleton  = function(class) return class.instances[1] end
+ManagedSingleton._getSingleton  = function(class) return class._instances[1] end
 
 function ManagedSingleton:new(...)
     self.new = function() end

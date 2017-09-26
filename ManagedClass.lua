@@ -2,8 +2,8 @@ ManagedClass = {}
 ManagedClass._generate      = function(class) class._instances = {} class.class = class end
 ManagedClass._add           = function(class, instance) table.insert(class._instances, instance) return instance end
 ManagedClass._remove        = function(class, instance) table.removevalue(class._instances, instance) return instance end
-ManagedClass._deleteAll     = function(class, ...) for _, instance in ipairs(class._instances) do delete(instance, true, ...) class._cleanUp(class, instance) end class._instances = {} end
-ManagedClass._cleanUp       = function() end -- TODO
+ManagedClass._deleteAll     = function(class, ...)  for _, instance in ipairs(class._instances) do delete(instance, true, ...) class._cleanUp(class, instance) end class._instances = {} end
+ManagedClass._cleanUp       = pure_virtual -- Implement as custom_runner
 
 ManagedClass.constructor = pure_virtual
 ManagedClass.destructor = pure_virtual
